@@ -23,7 +23,7 @@ The project involves scraping information from Google Maps search results based 
 
 4. **main Function:**
    The main function that orchestrates the entire scraping process. It performs the following steps:
-   - Takes user input for the city name and the place to search.
+   - Takes user input for the city code that corresponds to each city and the place to search.
    - Launches a Playwright browser and navigates to Google Maps.
    - Performs a search on Google Maps using the specified city name and place.
    - Scrolls to load more results and scrapes detailed information for each listing.
@@ -42,14 +42,15 @@ If these arguments are not provided, the script prompts the user for input.
 
 ### Choosing a City
 
-If the user does not provide a city name through the command line, the script displays a list of cities from `city.csv` and prompts the user to choose a city.
+If the user does not provide a city code / city name through the command line, the script displays a list of cities from `city.csv` and prompts the user to choose a city.
+If the city code is not valid, it prints an error message and stops further execution.
 
 ## Error Handling
 
 The code includes error handling mechanisms. For example:
 
 - If the Playwright browser encounters issues during scraping, the script prints the exception.
-- If the entered city is not in the list of cities, the script prints an error message and exits.
+- If the entered city code is not in the list of cities, the script prints an error message and exits.
 
 ## Saving Data
 
