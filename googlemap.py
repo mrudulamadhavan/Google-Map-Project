@@ -160,8 +160,9 @@ def main(search_for, total):
                 print(e)  # Print any exceptions encountered during scraping
 
         # Save the scraped data to a CSV file for each need and city
+        path = "output/"
         output_filename = f'{search_query.replace(" ", "_")}_data.csv'
-        with open(output_filename, 'w', newline='', encoding='utf-8') as csv_file:
+        with open(path+output_filename, 'w', newline='', encoding='utf-8') as csv_file:
             fieldnames = ['Name', 'Address', 'Latitude', 'Longitude', 'Website', 'PhoneNumber', 'ReviewsCount', 'AverageRating']
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
             writer.writeheader()
